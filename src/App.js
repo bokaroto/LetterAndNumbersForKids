@@ -6,8 +6,15 @@ import Picker from './pages/Picker';
 import Language from './pages/Language';
 import Drawing from './pages/Drawing';
 import NotFound from './pages/NotFound';
+import React, { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, []);
   return (
     <MyProvider>
       <Router>
